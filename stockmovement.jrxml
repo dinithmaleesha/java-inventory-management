@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stockmovement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6e9ab2f-e505-49c0-845a-14447f670cbc">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="InventoryManagement"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT smh.movement_id, p.Product_name, smh.movement_type, smh.source_location, smh.destination_location, smh.quantity, smh.movement_date FROM stock_movement_history AS smh JOIN products AS p ON smh.product_id = p.product_id]]>
+	</queryString>
+	<field name="movement_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="movement_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="movement_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<field name="Product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Product_name"/>
+		<property name="com.jaspersoft.studio.field.label" value="Product_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="products"/>
+	</field>
+	<field name="movement_type" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="movement_type"/>
+		<property name="com.jaspersoft.studio.field.label" value="movement_type"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<field name="source_location" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="source_location"/>
+		<property name="com.jaspersoft.studio.field.label" value="source_location"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<field name="destination_location" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="destination_location"/>
+		<property name="com.jaspersoft.studio.field.label" value="destination_location"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="quantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<field name="movement_date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="movement_date"/>
+		<property name="com.jaspersoft.studio.field.label" value="movement_date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="stock_movement_history"/>
+	</field>
+	<variable name="sumQt" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<group name="movement_id">
+		<groupExpression><![CDATA[$F{movement_id}]]></groupExpression>
+	</group>
+	<group name="Product_name">
+		<groupExpression><![CDATA[$F{Product_name}]]></groupExpression>
+	</group>
+	<group name="movement_type">
+		<groupExpression><![CDATA[$F{movement_type}]]></groupExpression>
+	</group>
+	<group name="source_location">
+		<groupExpression><![CDATA[$F{source_location}]]></groupExpression>
+	</group>
+	<group name="destination_location">
+		<groupExpression><![CDATA[$F{destination_location}]]></groupExpression>
+	</group>
+	<group name="quantity">
+		<groupExpression><![CDATA[$F{quantity}]]></groupExpression>
+	</group>
+	<group name="movement_date">
+		<groupExpression><![CDATA[$F{movement_date}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="254" height="70" uuid="d3281f7c-74d6-42d3-a79d-6110625c27e6"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[ABC Store]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="40" width="126" height="30" uuid="1cac9df2-d8f4-40b8-bfe5-dcf0184d41a0"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Colombo Branch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="0" width="130" height="100" uuid="81fdd52b-a9c2-4c84-95cd-aef33d24c2a8"/>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[No. 125/A
+Kotikawatta
+Sri Lanka
+----------------------
+077 000 0000
+----------------------
+colombo@abcstore.com]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="80" width="344" height="20" uuid="a8c74649-70fa-4601-896d-bebbc17ed6ba"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ABC Store: Your premier destination for electronics in Colombo.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="560" height="30" uuid="7712f52b-c0ff-46dc-8501-22f2bbeea5f2"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="15" width="560" height="30" uuid="e5ed6079-cb03-4324-937a-ce6f32e327b0"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Stock Movement History Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="560" height="30" uuid="32c5b041-792e-4ea3-8bd9-9d693ea54acd"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="0" width="30" height="30" uuid="a04f491a-4457-4a19-ad75-78771ab31432">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="815bedd2-9a2e-4ae0-a82f-9df3965af53f"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="0" width="80" height="30" uuid="671dbd89-35b4-4962-a532-052ca4d96a1a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="197d5c59-beac-4a43-89a4-1b3129ba7c76"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Product Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="90" height="30" uuid="545609a9-b1c3-4ea7-ab57-d014a191c979">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8f16ff8-eb46-42df-83d9-46fffcaa24c4"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Movement Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="225" y="0" width="90" height="30" uuid="dec705fa-4363-4c16-9b8a-516d8f53f88f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="94954951-3925-46a6-a1fc-f3aa3e7d513b"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Source Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="315" y="0" width="114" height="30" uuid="2ea30029-6189-4229-8fe5-acf788776c8d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bfbbab17-a676-405e-8cdc-06b7fadaa5d9"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destination Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="1" width="50" height="30" uuid="1ab0c43f-f186-4196-b965-f7c7441b0946">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a414e0a-de39-4ce0-afbe-a00ebaae20f1"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="1" width="54" height="30" uuid="94135277-7176-4913-bf03-4d7fbb33f228">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5977cf4b-de33-4f2c-8e0b-f78479fce16b"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="0" width="30" height="30" uuid="3cb845cd-5bae-4d5c-ada3-8d1b67a81a80">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="815bedd2-9a2e-4ae0-a82f-9df3965af53f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{movement_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="0" width="80" height="30" uuid="eb9bc721-5a67-49b7-8cdc-c513cf38e95a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="197d5c59-beac-4a43-89a4-1b3129ba7c76"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{Product_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="0" width="60" height="30" uuid="a16e689a-11c3-411b-ac5c-8ad6a6f4102f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8f16ff8-eb46-42df-83d9-46fffcaa24c4"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{movement_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="0" width="80" height="30" uuid="05131d79-06f9-4f81-9310-e466d1c15968">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="94954951-3925-46a6-a1fc-f3aa3e7d513b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{source_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="315" y="0" width="90" height="30" uuid="41522260-7e23-41a5-b5fe-c61f3a736447">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bfbbab17-a676-405e-8cdc-06b7fadaa5d9"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{destination_location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="50" height="30" uuid="91ef8585-b0c8-4df5-8865-cd4cd42042d1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a414e0a-de39-4ce0-afbe-a00ebaae20f1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="0" width="40" height="30" uuid="00537d87-80df-42c3-8dde-3d81654ad2e3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5977cf4b-de33-4f2c-8e0b-f78479fce16b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{movement_date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="21" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="85" splitType="Stretch">
+			<textField>
+				<reportElement x="260" y="16" width="190" height="30" uuid="1c160a1f-bd16-4bd3-aa7d-95abca1e1bf9"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="16" width="80" height="30" uuid="e55ec77d-bf45-4bd6-b384-ef340a0ea3a2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Generated on : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="560" height="30" uuid="717fcd09-6148-42ad-b524-646bbd35a6dd"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="38" width="570" height="30" uuid="9cabc191-5f5e-45bb-9910-24cc377f0828"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Software by ByteCraft Software]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="82" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="52" width="560" height="30" uuid="b84a440c-0104-4842-a2bf-9d9c20e59e31"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="560" height="30" uuid="c8078a8c-b5a9-4308-add6-1bd9c58cfa0e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[----------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="27" width="100" height="30" uuid="de37a024-b798-45b8-99f2-f5225bcc56cc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total Quantity :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="429" y="27" width="70" height="30" uuid="687eb06d-84f3-4314-82c4-8861ce133b5d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumQt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
